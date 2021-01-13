@@ -1,0 +1,5 @@
+data/medical_kg
+data/mimic
+__pycache__/
+experiments/
+.ipynb_checkpoints
