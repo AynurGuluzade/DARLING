@@ -1,4 +1,4 @@
-# Demographic Aware Probabilistic Medical Knowledge Graph Embeddings of Electronic Health Records
+# Demographic Aware Probabilistic Medical Knowledge Graph Embeddings of Electronic Medical Records
 
 Detailed steps on how to execute the framework will be available soon!
 
