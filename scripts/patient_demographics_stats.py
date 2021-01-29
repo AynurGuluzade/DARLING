@@ -31,7 +31,7 @@ age_year = []
 patients_year = {patient[1]: patient[3].split()[0].split('-')[0] for patient in patients}
 
 # How to quantize age values???
-quantize_counter = {
+quantize_counter_admission = {
     '0': 0, # [0-18)
     '1': 0, # [18-48)
     '2': 0, # [48-60)
@@ -40,23 +40,41 @@ quantize_counter = {
     '5': 0  # >=0
 }
 
+quantize_counter_patients = {
+    '0': 0, # [0-18)
+    '1': 0, # [18-48)
+    '2': 0, # [48-60)
+    '3': 0, # [60-70)
+    '4': 0, # [70-80)
+    '5': 0  # >=0
+}
+
+seen_patients = set()
+
 for adm in admissions:
     patient_id = adm[1]
     adm_year = adm[3].split()[0].split('-')[0]
     dob_year = patients_year[patient_id]
     age_year.append(int(adm_year) - int(dob_year))
     if age_year[-1] < 18:
-        quantize_counter['0'] += 1
+        quantize_counter_admission['0'] += 1
+        if patient_id not in seen_patients: quantize_counter_patients['0'] += 1
     elif age_year[-1] >= 18 and age_year[-1] < 48:
-        quantize_counter['1'] += 1
+        quantize_counter_admission['1'] += 1
+        if patient_id not in seen_patients: quantize_counter_patients['1'] += 1
     elif age_year[-1] >= 48 and age_year[-1] < 60:
-        quantize_counter['2'] += 1
+        quantize_counter_admission['2'] += 1
+        if patient_id not in seen_patients: quantize_counter_patients['2'] += 1
     elif age_year[-1] >= 60 and age_year[-1] < 70:
-        quantize_counter['3'] += 1
+        quantize_counter_admission['3'] += 1
+        if patient_id not in seen_patients: quantize_counter_patients['3'] += 1
     elif age_year[-1] >= 70 and age_year[-1] < 80:
-        quantize_counter['4'] += 1
+        quantize_counter_admission['4'] += 1
+        if patient_id not in seen_patients: quantize_counter_patients['4'] += 1
     elif age_year[-1] >= 80:
-        quantize_counter['5'] += 1
+        quantize_counter_admission['5'] += 1
+        if patient_id not in seen_patients: quantize_counter_patients['5'] += 1
+    seen_patients.add(patient_id)
 
 min_year = min(age_year)
 max_year = max(age_year)
@@ -68,7 +86,9 @@ print(f'Max year: {max_year}')
 print(f'Total unique years: {len(unique_years)}')
 # print(f'Counter year: {counter_age}')
 # print(f'Unique years: {sorted(list(unique_years))}')
-print(quantize_counter) # {'0': 8180, '1': 8894, '2': 10050, '3': 10618, '4': 10474, '5': 10760}
+print(quantize_counter_admission) # {'0': 8180, '1': 8894, '2': 10050, '3': 10618, '4': 10474, '5': 10760}
+
+print(quantize_counter_patients) # {'0': 7942, '1': 7005, '2': 7515, '3': 7860, '4': 7939, '5': 8259}
 # %%
 # gender stats - based on number of admissions
 genders = []
