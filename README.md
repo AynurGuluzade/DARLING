@@ -24,16 +24,16 @@ For constructing the knowledge graph please run:
 python scripts/prob_medical_kg_with_demographics.py
 ```
 
-## Train DARLING
+## Train Framework
 For training you will need to adjust the paths in [args](args.py) file. At the same file you can also modify and experiment with different model settings.
 ``` bash
-# train DARLING
+# train Framework
 python train.py
 ```
 
-## Test DARLING
+## Test Framework
 ``` bash
-# test DARLING
+# test Framework
 python test.py
 ```
 
