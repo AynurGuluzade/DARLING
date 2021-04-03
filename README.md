@@ -41,4 +41,12 @@ python test.py
 The repository is under [MIT License](LICENCE).
 
 ## Cite
-Coming Soon!
+```bash
+@inproceedings{
+    guluzade2021darling,
+    title={Demographic Aware Probabilistic Medical Knowledge Graph Embeddings of Electronic Medical Records},
+    author={Aynur Guluzade and Endri Kacupaj and Maria Maleshkova},
+    booktitle={Artificial Intelligence in Medicine (AIME 2021)},
+    year={2021}
+}
+```
