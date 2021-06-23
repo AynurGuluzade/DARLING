@@ -42,11 +42,22 @@ The repository is under [MIT License](LICENCE).
 
 ## Cite
 ```bash
-@inproceedings{
-    guluzade2021darling,
-    title={Demographic Aware Probabilistic Medical Knowledge Graph Embeddings of Electronic Medical Records},
-    author={Aynur Guluzade and Endri Kacupaj and Maria Maleshkova},
-    booktitle={Artificial Intelligence in Medicine (AIME 2021)},
-    year={2021}
+@InProceedings{10.1007/978-3-030-77211-6_48,
+    author="Guluzade, Aynur
+    and Kacupaj, Endri
+    and Maleshkova, Maria",
+    editor="Tucker, Allan
+    and Henriques Abreu, Pedro
+    and Cardoso, Jaime
+    and Pereira Rodrigues, Pedro
+    and Ria{\~{n}}o, David",
+    title="Demographic Aware Probabilistic Medical Knowledge Graph Embeddings of Electronic Medical Records",
+    booktitle="Artificial Intelligence in Medicine",
+    year="2021",
+    publisher="Springer International Publishing",
+    address="Cham",
+    pages="408--417",
+    abstract="Medical knowledge graphs (KGs) constructed from Electronic Medical Records (EMR) contain abundant information about patients and medical entities. The utilization of KG embedding models on these data has proven to be efficient for different medical tasks. However, existing models do not properly incorporate patient demographics and most of them ignore the probabilistic features of the medical KG. In this paper, we propose DARLING (Demographic Aware pRobabiListic medIcal kNowledge embeddinG), a demographic-aware medical KG embedding framework that explicitly incorporates demographics in the medical entities space by associating patient demographics with a corresponding hyperplane. Our framework leverages the probabilistic features within the medical entities for learning their representations through demographic guidance. We evaluate DARLING through link prediction for treatments and medicines, on a medical KG constructed from EMR data, and illustrate its superior performance compared to existing KG embedding models.",
+    isbn="978-3-030-77211-6"
 }
 ```
